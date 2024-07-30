@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encriptador</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body> 
+    <header>Encriptador By Franco</header>
+    <div class="textBoxs">
+        <div class="encriptador">
+            <textarea name="textIn" id="insertText"  placeholder="Ingresar texto aqui"></textarea>
+            <div id="buttons">
+                <button id="encriptar" onclick="funcEncriptar()">Encriptar</button>
+                <button id="desencriptar" onclick="funcDesencriptar()">Desencriptar</button>
+            </div> 
+        </div>
+        <div class="resultEncriptar">
+            <div id="divParaLaSalida">
+                <textarea  name="textOut" id="result" readonly  ></textarea> 
+                <div  id="buttons"  >
+                    <button id="copy" onclick="copiarTextoAlPortapapeles()">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="script.js"></script>
+</body> 
+
+</html>
