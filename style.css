@@ -76,7 +76,8 @@ textarea:focus {
     background-size:cover; 
     font-size: 1.5rem; 
     visibility:hidden; 
-    padding-top: 72px;   
+    padding-top: 30px;  
+    padding_bottom: 42px;  
 }
 #divParaLaSalida{ /* es el textarea para mostrar el texto encriptado o desencriptado*/ 
     width: 25rem;
