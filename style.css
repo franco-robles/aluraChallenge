@@ -101,6 +101,8 @@ textarea:focus {
     color: #0A3871;
 }
 
+::placeholder{color:#0A3871 }
+
 .encriptador{ /* es el textarea para ingresar texto y botones de encriptar y desencriptar*/
     justify-self: right ;
     
