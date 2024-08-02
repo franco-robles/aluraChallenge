@@ -54,6 +54,18 @@ textarea:focus {
     outline: none;
 }
 
+footer{
+    display: flex;
+    justify-content: center;
+    color:#0A3871;
+    background-color: #d9e0fb;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 10px;
+}
+
 #buttons{  
     display: flex; 
     justify-content: center;
