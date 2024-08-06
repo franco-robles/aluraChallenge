@@ -8,10 +8,18 @@
     document.getElementById("copy").style.visibility = "visible";
     document.getElementById("result").style.visibility = "visible";
     document.getElementById("divParaLaSalida").style.backgroundImage = "none";
+    document.getElementById("divParaLaSalida").style.height = "100%";
   }else{
     document.getElementById("copy").style.visibility = "hidden";
     document.getElementById("result").style.visibility = "hidden";
-    document.getElementById("divParaLaSalida").style.backgroundImage = "url('image/imagenPreEncriptar2.png')";
+    if(window.screen.width > 768){
+      document.getElementById("divParaLaSalida").style.backgroundImage = "url('image/imagenPreEncriptar2.png')";
+    }else if(window.screen.width > 375){
+      document.getElementById("divParaLaSalida").style.backgroundImage = "url('image/imagenPreEncriptar3.png')";
+    }else {
+      document.getElementById("divParaLaSalida").style.backgroundImage = "url('image/imagenPreEncriptar4.png')";
+    }
+    
   }
   
 }
@@ -26,18 +34,34 @@ function funcDesencriptar() {
     document.getElementById("copy").style.visibility = "visible";
     document.getElementById("result").style.visibility = "visible";
     document.getElementById("divParaLaSalida").style.backgroundImage = "none";
+    document.getElementById("divParaLaSalida").style.height = "100%";
+
+
   }else{
     document.getElementById("copy").style.visibility = "hidden";
     document.getElementById("result").style.visibility = "hidden";
-    document.getElementById("divParaLaSalida").style.backgroundImage = "url('image/imagenPreEncriptar2.png')";
+    if(window.screen.width > 768){
+      document.getElementById("divParaLaSalida").style.backgroundImage = "url('image/imagenPreEncriptar2.png')";
+    }else if(window.screen.width > 375){
+      document.getElementById("divParaLaSalida").style.backgroundImage = "url('image/imagenPreEncriptar3.png')";
+    }else {
+      document.getElementById("divParaLaSalida").style.backgroundImage = "url('image/imagenPreEncriptar4.png')";
+    }
   }
 }
 
 
 function auxEncriptar(texto){
-  //voy a cerar una variable en la cual voy a ir agregando las letras encriptadas o no segun lo necesite
+  //en esta variable se va guardando el msj encriptado
    var msjEncriptado ="" ;
 
+  /**El funcionamiento es el siguiente:
+   * el for va haciendo que se recorra la palabra
+   * con el switch me fifjo si es vocal o consonante
+   *    - si es vocal agrego su ersion encripada
+   *    - si es consonante se agrega normal
+   * y al finalizar el msj queda encriptado
+   */
   for (let i = 0; i < texto.length; i++) {
     switch (texto[i]) {
       case "a":
@@ -65,42 +89,54 @@ function auxEncriptar(texto){
 }
 
 function auxDesencriptar(texto){
-  //voy a cerar una variable en la cual voy a ir agregando las letras encriptadas o no segun lo necesite
-  var msjEncriptado ="" ;
+  //en esta variable se van agregando las letras que corresponde al msj desencriptado
+  var msjDesncriptado ="" ;
   var i = 0;
+
+  /**
+   * la funcion es la siguiente: 
+   * cada vez que encuentra una vocal la guarda y avanza la variable i una cantidad de espacion correspondiente
+   * a la encriptacion de cada vocal
+   * y las consonantes se guardan, y se avanza en uno la variable i
+   */
   while( i < texto.length) {
   
     switch (texto[i]) {
       case "a":
-        msjEncriptado = msjEncriptado+"a"; 
+        msjDesncriptado = msjDesncriptado+"a"; 
         i=i+2;
         break;
       case "e":
-        msjEncriptado = msjEncriptado+"e"; 
+        msjDesncriptado = msjDesncriptado+"e"; 
         i=i+5;
         break;
       case "i":
-        msjEncriptado = msjEncriptado+"i"; 
+        msjDesncriptado = msjDesncriptado+"i"; 
         i=i+4;
         break;
       case "o":
-        msjEncriptado = msjEncriptado+"o"; 
+        msjDesncriptado = msjDesncriptado+"o"; 
         i=i+4;
         break;
       case "u":
-        msjEncriptado = msjEncriptado+"u";
+        msjDesncriptado = msjDesncriptado+"u";
         i=i+4;
         break;
       default:
-        msjEncriptado = msjEncriptado+texto[i];
+        msjDesncriptado = msjDesncriptado+texto[i];
         i=i+1;
     }
     
   }
-  return msjEncriptado;
+  return msjDesncriptado;
 }
 
+
+/**
+ * Esta funcion agrega la funcionalidad de copiado al boton copiar de la pagina
+ */
 function copiarTextoAlPortapapeles() {
   var texto = document.getElementById("result").value;
   navigator.clipboard.writeText(texto);
 }
+
