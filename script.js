@@ -1,5 +1,5 @@
  function funcEncriptar() {
-  var texto =  document.getElementById("insertText").value;
+  var texto =  document.getElementById("insertText").value.toLowerCase();
   if (texto.length!=0) {
     textoEncriptado = auxEncriptar(texto); 
 
@@ -25,7 +25,7 @@
 }
 
 function funcDesencriptar() {
-  var texto =  document.getElementById("insertText").value;
+  var texto =  document.getElementById("insertText").value.toLowerCase();
   if (texto.length!=0) {
     textoEncriptado = auxDesencriptar(texto);
 
