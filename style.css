@@ -64,6 +64,7 @@ textarea:focus {
     outline: none;
 }
 
+
 footer{
     display: flex;
     justify-content: center;
@@ -94,6 +95,14 @@ footer{
     width: 100%;
     padding-bottom: 20px;;
 }   
+
+.infoImportante{
+    display: flex;
+    padding-left: 30px;
+    margin-bottom: 16px;
+    color: #495057;
+    font-size: 12px;
+}
 
 #result{ /* es el textarea para mostrar el texto encriptado o desencriptado*/
     resize: none;
@@ -159,7 +168,8 @@ footer{
 
 #copy{            /* boton */   
     height: 4.188rem;
-    width: 84%;  
+    width: 84%;
+    visibility: hidden;
 }
 
 #buttonCopy{ /* div que contiene el boton copy */
@@ -256,7 +266,7 @@ footer{
     }
 
     #copy{           /* boton */
-          
+        visibility: hidden;
         height: 4.188rem;
         width: 84%;  
     }
